@@ -546,6 +546,20 @@ fun ImageExplorerContentPreview() {
 
 ---
 
+## 📱 **Screenshots**
+
+### **Running App Screenshot**
+![Running App Screenshot](runningApp.png)
+
+*Screenshot showing the Image Explorer app running with MIU Campus image displayed, demonstrating proper image scaling, centered title, and Next button layout.*
+
+### **Test Report Screenshot**
+![Test Report Screenshot](appTest.png)
+
+*Screenshot of test results showing all unit tests passing, including ViewModel state transitions, wrap-around functionality, and initial state verification.*
+
+---
+
 ## 🚀 **Running the Application**
 
 ### **Build and Test**
@@ -582,6 +596,20 @@ fun ImageExplorerContentPreview() {
 | Code Quality (3 pts) | 3/3 | ✅ Complete |
 | **BONUS: Hilt DI (+3 pts)** | +3 | ✅ Complete |
 | **TOTAL** | **39/36** | ✅ **Exceeds Requirements** |
+
+---
+
+## 📋 **Submission Requirements Met**
+
+As specified in the original exam requirements, the following deliverables are included:
+
+### **1. Project Repository**
+- **GitHub Repository**: https://github.com/vmercel/CS473-EXAM.git
+- Complete Android project with all source code, tests, and resources
+
+### **2. README File with Screenshots**
+- ✅ **Running App Screenshot**: [`runningApp.png`](runningApp.png) - Shows image + title display
+- ✅ **Test Report Screenshot**: [`appTest.png`](appTest.png) - Shows all unit tests passing
 
 ---
 
