@@ -88,44 +88,26 @@ fun ImageExplorerContent(
     }
 }
 
-@Preview(showBackground = true, name = "MIU Campus - Improved Layout")
+@Preview(showBackground = true, name = "Interactive Image Explorer")
 @Composable
-fun ImageExplorerContentPreview() {
+fun ImageExplorerInteractivePreview() {
+    MyImageAppTheme {
+        // This preview shows the actual interactive screen
+        // Click "Next" to cycle through images with wrap-around
+        ImageExplorerScreen()
+    }
+}
+
+@Preview(showBackground = true, name = "Static - First Image")
+@Composable
+fun ImageExplorerStaticPreview() {
     MyImageAppTheme {
         ImageExplorerContent(
             uiState = ImageExplorerUiState(
                 currentTitleRes = R.string.title_mountains,
                 currentImageRes = R.drawable.miu_campus
             ),
-            onNextClick = {}
-        )
-    }
-}
-
-@Preview(showBackground = true, name = "Snow Fall")
-@Composable
-fun ImageExplorerOceanPreview() {
-    MyImageAppTheme {
-        ImageExplorerContent(
-            uiState = ImageExplorerUiState(
-                currentTitleRes = R.string.title_ocean,
-                currentImageRes = R.drawable.miu_snow_fall
-            ),
-            onNextClick = {}
-        )
-    }
-}
-
-@Preview(showBackground = true, name = "Sustainable Center")
-@Composable
-fun ImageExplorerForestPreview() {
-    MyImageAppTheme {
-        ImageExplorerContent(
-            uiState = ImageExplorerUiState(
-                currentTitleRes = R.string.title_forest,
-                currentImageRes = R.drawable.sustainable_living_center
-            ),
-            onNextClick = {}
+            onNextClick = {} // Static preview - no interaction
         )
     }
 }
