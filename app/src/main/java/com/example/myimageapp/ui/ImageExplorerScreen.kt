@@ -1,6 +1,7 @@
 package com.example.myimageapp.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
@@ -48,6 +49,7 @@ fun ImageExplorerContent(
     Column(
         modifier = modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.surfaceContainerLowest)  // Subtle background color
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
@@ -61,9 +63,8 @@ fun ImageExplorerContent(
                     null
                 },
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .aspectRatio(16f / 9f)  // Standard aspect ratio for better composition
-                    .padding(horizontal = 8.dp),  // Side padding for better visual balance
+                    .fillMaxWidth()  // True full width - no padding
+                    .aspectRatio(16f / 9f),  // Standard aspect ratio for better composition
                 contentScale = ContentScale.Crop
             )
         }
