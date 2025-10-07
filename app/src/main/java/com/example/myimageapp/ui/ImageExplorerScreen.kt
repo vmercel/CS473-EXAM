@@ -49,10 +49,9 @@ fun ImageExplorerContent(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.surfaceContainerLowest)  // Subtle background color
-            .padding(16.dp),
+            .background(MaterialTheme.colorScheme.surface),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
         if (uiState.currentImageRes != 0) {
             Image(
@@ -63,28 +62,33 @@ fun ImageExplorerContent(
                     null
                 },
                 modifier = Modifier
-                    .fillMaxWidth()  // True full width - no padding
-                    .aspectRatio(16f / 9f),  // Standard aspect ratio for better composition
+                    .fillMaxWidth()
+                    .aspectRatio(16f / 9f),
                 contentScale = ContentScale.Crop
             )
         }
-        
+
         if (uiState.currentTitleRes != 0) {
             Text(
                 text = stringResource(id = uiState.currentTitleRes),
-                style = MaterialTheme.typography.headlineMedium,
+                style = MaterialTheme.typography.headlineSmall,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 16.dp)
+                    .padding(vertical = 24.dp, horizontal = 16.dp)
             )
         }
-        
+
         Button(
             onClick = onNextClick,
-            modifier = Modifier.padding(top = 16.dp)
+            modifier = Modifier
+                .padding(horizontal = 32.dp)
+                .padding(top = 8.dp)
         ) {
-            Text(text = stringResource(id = R.string.button_next))
+            Text(
+                text = stringResource(id = R.string.button_next),
+                style = MaterialTheme.typography.labelLarge
+            )
         }
     }
 }
@@ -105,8 +109,8 @@ fun ImageExplorerStaticPreview() {
     MyImageAppTheme {
         ImageExplorerContent(
             uiState = ImageExplorerUiState(
-                currentTitleRes = R.string.title_mountains,
-                currentImageRes = R.drawable.miu_campus
+                currentTitleRes = R.string.title_compro_professionals,
+                currentImageRes = R.drawable.compro_professionals
             ),
             onNextClick = {} // Static preview - no interaction
         )

@@ -40,10 +40,10 @@ class ImageExplorerViewModelTest {
     @Test
     fun testInitialUiState() = runTest {
         val uiState = viewModel.uiState.value
-        
+
         // Should start with the first item
-        assertEquals(R.string.title_mountains, uiState.currentTitleRes)
-        assertEquals(R.drawable.miu_campus, uiState.currentImageRes)
+        assertEquals(R.string.title_compro_professionals, uiState.currentTitleRes)
+        assertEquals(R.drawable.compro_professionals, uiState.currentImageRes)
         assertEquals(false, uiState.isLoading)
     }
     
@@ -51,33 +51,33 @@ class ImageExplorerViewModelTest {
     fun testGetNextUpdatesState() = runTest {
         // Initially at first item
         val initialState = viewModel.uiState.value
-        assertEquals(R.string.title_mountains, initialState.currentTitleRes)
-        assertEquals(R.drawable.miu_campus, initialState.currentImageRes)
-        
+        assertEquals(R.string.title_compro_professionals, initialState.currentTitleRes)
+        assertEquals(R.drawable.compro_professionals, initialState.currentImageRes)
+
         // After calling getNext(), should move to second item
         viewModel.getNext()
-        
+
         val updatedState = viewModel.uiState.value
-        assertEquals(R.string.title_ocean, updatedState.currentTitleRes)
-        assertEquals(R.drawable.miu_snow_fall, updatedState.currentImageRes)
+        assertEquals(R.string.title_compro_admission, updatedState.currentTitleRes)
+        assertEquals(R.drawable.compro_admission_team, updatedState.currentImageRes)
     }
     
     @Test
     fun testWrapAroundAfterLastItem() = runTest {
-        // Navigate to the last item (index 3)
-        repeat(3) {
+        // Navigate to the last item (index 4)
+        repeat(4) {
             viewModel.getNext()
         }
-        
+
         val lastItemState = viewModel.uiState.value
-        assertEquals(R.string.title_desert, lastItemState.currentTitleRes)
-        assertEquals(R.drawable.rainbow, lastItemState.currentImageRes)
-        
+        assertEquals(R.string.title_graduation, lastItemState.currentTitleRes)
+        assertEquals(R.drawable.graduation, lastItemState.currentImageRes)
+
         // One more getNext() should wrap around to first item
         viewModel.getNext()
-        
+
         val wrappedState = viewModel.uiState.value
-        assertEquals(R.string.title_mountains, wrappedState.currentTitleRes)
-        assertEquals(R.drawable.miu_campus, wrappedState.currentImageRes)
+        assertEquals(R.string.title_compro_professionals, wrappedState.currentTitleRes)
+        assertEquals(R.drawable.compro_professionals, wrappedState.currentImageRes)
     }
 }
