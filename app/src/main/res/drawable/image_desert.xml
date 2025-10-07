@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="150dp"
+    android:viewportWidth="200"
+    android:viewportHeight="150">
+    
+    <!-- Sky -->
+    <path
+        android:fillColor="#FFA500"
+        android:pathData="M0,0 L200,0 L200,40 L0,40 Z" />
+    
+    <!-- Sun -->
+    <path
+        android:fillColor="#FF4500"
+        android:pathData="M25,20 C25,11.716 31.716,5 40,5 C48.284,5 55,11.716 55,20 C55,28.284 48.284,35 40,35 C31.716,35 25,28.284 25,20 Z" />
+    
+    <!-- Sand dunes -->
+    <path
+        android:fillColor="#F4A460"
+        android:pathData="M0,40 Q50,30 100,40 Q150,50 200,40 L200,150 L0,150 Z" />
+    
+    <!-- Cactus -->
+    <path
+        android:fillColor="#228B22"
+        android:pathData="M120,80 L126,80 L126,120 L120,120 Z" />
+    
+    <path
+        android:fillColor="#228B22"
+        android:pathData="M110,85 L114,85 L114,105 L110,105 Z" />
+    
+    <path
+        android:fillColor="#228B22"
+        android:pathData="M130,90 L134,90 L134,115 L130,115 Z" />
+</vector>

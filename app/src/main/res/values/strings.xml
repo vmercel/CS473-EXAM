@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Image App</string>
+    
+    <!-- Image titles -->
+    <string name="title_mountains">MIU Campus</string>
+    <string name="title_ocean">MIU Snow Fall</string>
+    <string name="title_forest">Sustainable Living Center</string>
+    <string name="title_desert">Rainbow</string>
+    
+    <!-- UI strings -->
+    <string name="button_next">Next</string>
+</resources>

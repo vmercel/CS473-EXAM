@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="150dp"
+    android:viewportWidth="200"
+    android:viewportHeight="150">
+    
+    <!-- Sky -->
+    <path
+        android:fillColor="#87CEEB"
+        android:pathData="M0,0 L200,0 L200,50 L0,50 Z" />
+    
+    <!-- Trees -->
+    <path
+        android:fillColor="#228B22"
+        android:pathData="M20,70 C20,53.431 33.431,40 50,40 C66.569,40 80,53.431 80,70 C80,86.569 66.569,100 50,100 C33.431,100 20,86.569 20,70 Z" />
+    
+    <path
+        android:fillColor="#32CD32"
+        android:pathData="M65,60 C65,43.431 78.431,25 100,25 C121.569,25 135,43.431 135,60 C135,76.569 121.569,95 100,95 C78.431,95 65,76.569 65,60 Z" />
+    
+    <path
+        android:fillColor="#228B22"
+        android:pathData="M125,75 C125,58.431 138.431,50 150,50 C161.569,50 175,58.431 175,75 C175,91.569 161.569,100 150,100 C138.431,100 125,91.569 125,75 Z" />
+    
+    <!-- Tree trunks -->
+    <path
+        android:fillColor="#8B4513"
+        android:pathData="M46,90 L54,90 L54,130 L46,130 Z" />
+    
+    <path
+        android:fillColor="#8B4513"
+        android:pathData="M95,85 L105,85 L105,130 L95,130 Z" />
+    
+    <path
+        android:fillColor="#8B4513"
+        android:pathData="M147,95 L153,95 L153,130 L147,130 Z" />
+    
+    <!-- Ground -->
+    <path
+        android:fillColor="#228B22"
+        android:pathData="M0,120 L200,120 L200,150 L0,150 Z" />
+</vector>
