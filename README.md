@@ -583,19 +583,6 @@ fun ImageExplorerContentPreview() {
 
 ---
 
-## 📊 **Grading Summary**
-
-| **Criterion** | **Points** | **Status** |
-|---------------|------------|------------|
-| Image explorer screen (4 pts) | 4/4 | ✅ Complete |
-| ViewModel & StateFlow (8 pts) | 8/8 | ✅ Complete |
-| UiState (2 pts) | 2/2 | ✅ Complete |
-| Repository Pattern (10 pts) | 10/10 | ✅ Complete |
-| Static Data Source (5 pts) | 5/5 | ✅ Complete |
-| Unit Tests (4 pts) | 4/4 | ✅ Complete |
-| Code Quality (3 pts) | 3/3 | ✅ Complete |
-| **BONUS: Hilt DI (+3 pts)** | +3 | ✅ Complete |
-| **TOTAL** | **39/36** | ✅ **Exceeds Requirements** |
 
 ---
 
@@ -613,7 +600,7 @@ As specified in the original exam requirements, the following deliverables are i
 
 ---
 
-## 🎯 **Key Achievement Highlights**
+## 🎯 **Key Highlights**
 
 - ✅ **Perfect Architecture**: Clean separation with Repository pattern, ViewModel, and StateFlow
 - ✅ **Complete Hilt Integration**: Full dependency injection setup with all required annotations
@@ -621,5 +608,3 @@ As specified in the original exam requirements, the following deliverables are i
 - ✅ **Type Safety**: Resource annotations ensure compile-time safety
 - ✅ **Modern UI**: Jetpack Compose with Material3 design and proper accessibility
 - ✅ **Production Ready**: Follows Android best practices and architecture guidelines
-
-This implementation demonstrates mastery of modern Android development patterns and exceeds the exam requirements by implementing the bonus Hilt dependency injection feature.
