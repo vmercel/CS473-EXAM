@@ -12,7 +12,7 @@ This README provides detailed mapping of each grading criterion to specific code
 
 ### **Images Are Fit Properly (3 points)**
 
-**Implementation**: [`app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt:55-66`](app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt)
+**Implementation**: [`app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt:57-68`](app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt)
 
 ```kotlin
 Image(
@@ -23,41 +23,41 @@ Image(
         null
     },
     modifier = Modifier
-        .fillMaxWidth()           // Fills entire screen width
-        .weight(1f),             // Takes available vertical space for reasonable aspect ratio
-    contentScale = ContentScale.Crop  // Maintains aspect ratio with cropped fit (no distortion)
+        .fillMaxWidth()  // True full width - no padding
+        .aspectRatio(16f / 9f),  // Standard aspect ratio for better composition
+    contentScale = ContentScale.Crop
 )
 ```
 
 **Key Features**:
-- `fillMaxWidth()` ensures image fills the full screen width
-- `weight(1f)` allows image to take available vertical space for proper aspect ratio
+- `fillMaxWidth()` ensures image fills the full screen width with no side padding
+- `aspectRatio(16f / 9f)` provides consistent standard aspect ratio for all images
 - `ContentScale.Crop` maintains original aspect ratio with cropped fit (prevents stretching/distortion)
 
 ### **Title Is Aligned Center Horizontally (1 point)**
 
-**Implementation**: [`app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt:70-77`](app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt)
+**Implementation**: [`app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt:72-79`](app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt)
 
 ```kotlin
 Text(
     text = stringResource(id = uiState.currentTitleRes),
-    style = MaterialTheme.typography.headlineMedium,
-    textAlign = TextAlign.Center,        // Centers text horizontally
+    style = MaterialTheme.typography.headlineSmall,
+    textAlign = TextAlign.Center,
     modifier = Modifier
-        .fillMaxWidth()                  // Takes full width for proper centering
-        .padding(vertical = 16.dp)
+        .fillMaxWidth()
+        .padding(vertical = 24.dp, horizontal = 16.dp)
 )
 ```
 
-**Layout Container**: [`app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt:47-52`](app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt)
+**Layout Container**: [`app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt:49-55`](app/src/main/java/com/example/myimageapp/ui/ImageExplorerScreen.kt)
 
 ```kotlin
 Column(
     modifier = modifier
         .fillMaxSize()
-        .padding(16.dp),
-    horizontalAlignment = Alignment.CenterHorizontally,  // Centers all child components
-    verticalArrangement = Arrangement.Center
+        .background(MaterialTheme.colorScheme.surface),
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.Top
 )
 ```
 
@@ -263,42 +263,48 @@ data class ImageItem(
 object ImageDataSource {
     val images = listOf(
         ImageItem(
-            titleRes = R.string.title_mountains,    // Type-safe string resource
-            imageRes = R.drawable.miu_campus        // Type-safe drawable resource
+            titleRes = R.string.title_compro_professionals,    // Type-safe string resource
+            imageRes = R.drawable.compro_professionals          // Type-safe drawable resource
         ),
         ImageItem(
-            titleRes = R.string.title_ocean,
-            imageRes = R.drawable.miu_snow_fall
+            titleRes = R.string.title_compro_admission,
+            imageRes = R.drawable.compro_admission_team
         ),
         ImageItem(
-            titleRes = R.string.title_forest,
-            imageRes = R.drawable.sustainable_living_center
+            titleRes = R.string.title_faculty_student,
+            imageRes = R.drawable.faculty_student
         ),
         ImageItem(
-            titleRes = R.string.title_desert,
-            imageRes = R.drawable.rainbow
+            titleRes = R.string.title_friends,
+            imageRes = R.drawable.friends
+        ),
+        ImageItem(
+            titleRes = R.string.title_graduation,
+            imageRes = R.drawable.graduation
         )
     )
 }
 ```
 
-**String Resources**: [`app/src/main/res/values/strings.xml:5-8`](app/src/main/res/values/strings.xml)
+**String Resources**: [`app/src/main/res/values/strings.xml:5-9`](app/src/main/res/values/strings.xml)
 
 ```xml
 <!-- Image titles -->
-<string name="title_mountains">MIU Campus</string>
-<string name="title_ocean">MIU Snow Fall</string>
-<string name="title_forest">Sustainable Living Center</string>
-<string name="title_desert">Rainbow</string>
+<string name="title_compro_professionals">Compro Professionals</string>
+<string name="title_compro_admission">Compro Admission Team</string>
+<string name="title_faculty_student">Faculty Student</string>
+<string name="title_friends">Friends</string>
+<string name="title_graduation">Graduation</string>
 ```
 
 ### **At Least 4 Items (2 points)**
 
-**Implementation**: 4 images provided in data source:
-1. **MIU Campus** - [`app/src/main/res/drawable/miu_campus.png`](app/src/main/res/drawable/miu_campus.png)
-2. **MIU Snow Fall** - [`app/src/main/res/drawable/miu_snow_fall.jpg`](app/src/main/res/drawable/miu_snow_fall.jpg)
-3. **Sustainable Living Center** - [`app/src/main/res/drawable/sustainable_living_center.jpg`](app/src/main/res/drawable/sustainable_living_center.jpg)
-4. **Rainbow** - [`app/src/main/res/drawable/rainbow.jpg`](app/src/main/res/drawable/rainbow.jpg)
+**Implementation**: 5 images provided in data source (exceeds requirement):
+1. **Compro Professionals** - [`app/src/main/res/drawable/compro_professionals.png`](app/src/main/res/drawable/compro_professionals.png)
+2. **Compro Admission Team** - [`app/src/main/res/drawable/compro_admission_team.png`](app/src/main/res/drawable/compro_admission_team.png)
+3. **Faculty Student** - [`app/src/main/res/drawable/faculty_student.png`](app/src/main/res/drawable/faculty_student.png)
+4. **Friends** - [`app/src/main/res/drawable/friends.jpeg`](app/src/main/res/drawable/friends.jpeg)
+5. **Graduation** - [`app/src/main/res/drawable/graduation.jpeg`](app/src/main/res/drawable/graduation.jpeg)
 
 ---
 
@@ -334,10 +340,11 @@ class ImageExplorerViewModelTest {
 class FakeImageRepository : ImageRepository {
     
     private val fakeImages = listOf(
-        ImageItem(titleRes = R.string.title_mountains, imageRes = R.drawable.miu_campus),
-        ImageItem(titleRes = R.string.title_ocean, imageRes = R.drawable.miu_snow_fall),
-        ImageItem(titleRes = R.string.title_forest, imageRes = R.drawable.sustainable_living_center),
-        ImageItem(titleRes = R.string.title_desert, imageRes = R.drawable.rainbow)
+        ImageItem(titleRes = R.string.title_compro_professionals, imageRes = R.drawable.compro_professionals),
+        ImageItem(titleRes = R.string.title_compro_admission, imageRes = R.drawable.compro_admission_team),
+        ImageItem(titleRes = R.string.title_faculty_student, imageRes = R.drawable.faculty_student),
+        ImageItem(titleRes = R.string.title_friends, imageRes = R.drawable.friends),
+        ImageItem(titleRes = R.string.title_graduation, imageRes = R.drawable.graduation)
     )
     
     override fun getNextIndex(currentIndex: Int): Int {
@@ -354,8 +361,8 @@ fun testInitialUiState() = runTest {
     val uiState = viewModel.uiState.value
     
     // Should start with the first item
-    assertEquals(R.string.title_mountains, uiState.currentTitleRes)
-    assertEquals(R.drawable.miu_campus, uiState.currentImageRes)
+    assertEquals(R.string.title_compro_professionals, uiState.currentTitleRes)
+    assertEquals(R.drawable.compro_professionals, uiState.currentImageRes)
     assertEquals(false, uiState.isLoading)
 }
 
@@ -363,14 +370,14 @@ fun testInitialUiState() = runTest {
 fun testGetNextUpdatesState() = runTest {
     // Initially at first item
     val initialState = viewModel.uiState.value
-    assertEquals(R.string.title_mountains, initialState.currentTitleRes)
+    assertEquals(R.string.title_compro_professionals, initialState.currentTitleRes)
     
     // After calling getNext(), should move to second item
     viewModel.getNext()
     
     val updatedState = viewModel.uiState.value
-    assertEquals(R.string.title_ocean, updatedState.currentTitleRes)
-    assertEquals(R.drawable.miu_snow_fall, updatedState.currentImageRes)
+    assertEquals(R.string.title_compro_admission, updatedState.currentTitleRes)
+    assertEquals(R.drawable.compro_admission_team, updatedState.currentImageRes)
 }
 ```
 
@@ -578,8 +585,8 @@ fun ImageExplorerContentPreview() {
 1. Open project in Android Studio
 2. Start emulator or connect device
 3. Click Run button (green triangle)
-4. App launches showing MIU Campus image
-5. Tap "Next" to cycle through images with wrap-around
+4. App launches showing Compro Professionals image
+5. Tap "Next" to cycle through images with wrap-around: Compro Professionals → Compro Admission Team → Faculty Student → Friends → Graduation → (repeats)
 
 ---
 
