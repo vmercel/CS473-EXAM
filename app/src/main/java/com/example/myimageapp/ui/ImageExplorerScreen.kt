@@ -3,6 +3,7 @@ package com.example.myimageapp.ui
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -61,7 +62,8 @@ fun ImageExplorerContent(
                 },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f),
+                    .aspectRatio(16f / 9f)  // Standard aspect ratio for better composition
+                    .padding(horizontal = 8.dp),  // Side padding for better visual balance
                 contentScale = ContentScale.Crop
             )
         }
@@ -86,7 +88,7 @@ fun ImageExplorerContent(
     }
 }
 
-@Preview(showBackground = true, name = "MIU Campus")
+@Preview(showBackground = true, name = "MIU Campus - Improved Layout")
 @Composable
 fun ImageExplorerContentPreview() {
     MyImageAppTheme {
